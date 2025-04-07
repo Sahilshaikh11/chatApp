@@ -46,9 +46,6 @@ flutter_*.png
 linked_*.ds
 unlinked.ds
 unlinked_spec.ds
-lib/firebase_option.dart
-.firebase_option
-firebase.json
 
 # Android related
 **/android/**/gradle-wrapper.jar
@@ -121,3 +118,10 @@ app.*.symbols
 !**/ios/**/default.perspectivev3
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 !/dev/ci/**/Gemfile.lock
+
+# Firebase related
+firebase.json
+.firebase/
+**/google-services.json
+**/GoogleService-Info.plist
+**/firebase_options.dart
