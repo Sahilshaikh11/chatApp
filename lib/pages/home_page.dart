@@ -32,23 +32,26 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _buildUserStream() {
-    return StreamBuilder(
-      stream: _chatService.getUserStream(),
-      builder: (context, snapshot) {
-        if (snapshot.hasError) {
-          return const Text('Error');
-        }
-
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Text("Loading..");
-        }
-
-        return ListView(
-          children: snapshot.data!
-              .map<Widget>((userData) => _buildUserListItem(userData, context))
-              .toList(),
-        );
-      },
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: StreamBuilder(
+        stream: _chatService.getUserStream(),
+        builder: (context, snapshot) {
+          if (snapshot.hasError) {
+            return const Text('Error');
+          }
+      
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Text("Loading..");
+          }
+      
+          return ListView(
+            children: snapshot.data!
+                .map<Widget>((userData) => _buildUserListItem(userData, context))
+                .toList(),
+          );
+        },
+      ),
     );
   }
 
@@ -63,6 +66,7 @@ class HomePage extends StatelessWidget {
             MaterialPageRoute(
               builder: (context) => ChatPage(
                 receverEmail: userData["email"],
+                receverId: userData["uid"],
               ),
             ),
           );
