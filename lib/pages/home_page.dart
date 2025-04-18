@@ -19,12 +19,14 @@ class HomePage extends StatelessWidget {
           title: Text(
             'Home',
             style: TextStyle(
-              color: Theme.of(context).colorScheme.tertiary,
+              color: Theme.of(context).colorScheme.primary,
             ),
           ),
-          backgroundColor: Theme.of(context).colorScheme.primary,
+          backgroundColor: Colors.transparent,
+          foregroundColor: Colors.grey,
+          elevation: 0,
           iconTheme: IconThemeData(
-            color: Theme.of(context).colorScheme.tertiary,
+            color: Theme.of(context).colorScheme.primary,
           )),
       drawer: const MyDrawer(),
       body: _buildUserStream(),
