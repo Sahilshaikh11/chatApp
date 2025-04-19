@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
           centerTitle: true,
           title: Text(
-            'Home',
+            'U S E R S',
             style: TextStyle(
               color: Theme.of(context).colorScheme.primary,
             ),
