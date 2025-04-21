@@ -29,15 +29,15 @@ class HomePage extends StatelessWidget {
             color: Theme.of(context).colorScheme.primary,
           )),
       drawer: const MyDrawer(),
-      body: _buildUserStream(),
+      body: _buildUserList(),
     );
   }
 
-  Widget _buildUserStream() {
+  Widget _buildUserList() {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: StreamBuilder(
-        stream: _chatService.getUserStream(),
+        stream: _chatService.getUsersStreamExcludingBlocked(),
         builder: (context, snapshot) {
           if (snapshot.hasError) {
             return const Text('Error');

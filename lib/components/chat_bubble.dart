@@ -108,7 +108,11 @@ class ChatBubble extends StatelessWidget {
                   onPressed: () {
                     // block
                     ChatService().blockUser(userId);
+                    // close dialog
                     Navigator.pop(context);
+                    // close chat page
+                    Navigator.pop(context);
+                    // show snackbar
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
                         content: Text('User Blocked successfully!'),
